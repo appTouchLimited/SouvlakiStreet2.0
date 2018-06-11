@@ -1,14 +1,16 @@
 package uk.co.apptouch.souvlakistreet;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
-public class FragmentOne extends android.app.Fragment {
-    public static FragmentOne newInstance() {
-        FragmentOne fragment = new FragmentOne();
+public class FragmentFour extends android.app.Fragment {
+
+    public static FragmentFour newInstance() {
+        FragmentFour fragment = new FragmentFour();
         return fragment;
     }
 
@@ -20,6 +22,7 @@ public class FragmentOne extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_one, container, false);
+        return inflater.inflate(R.layout.fragment_four, container, false);
+
     }
 }

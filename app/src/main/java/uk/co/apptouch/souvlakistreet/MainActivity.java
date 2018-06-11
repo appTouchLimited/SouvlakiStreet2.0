@@ -1,7 +1,5 @@
 package uk.co.apptouch.souvlakistreet;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -25,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
                    fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentMain()).commit();
                     return true;
                 case R.id.navigation_menu:
-                    fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentOne()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentTwo()).commit();
                     return true;
                 case R.id.navigation_location:
-                  //  fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentItemThree()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentThree()).commit();
                     return true;
                 case R.id.navigation_payment:
-                    //fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentItemFour()).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentFour()).commit();
                     return true;
             }
             return false;
@@ -42,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
+        android.app.FragmentManager fragmentManager = getFragmentManager();
+
         setContentView(R.layout.activity_main);
+        fragmentManager.beginTransaction().replace(R.id.content_frame, new FragmentMain()).commit();
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
